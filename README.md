@@ -1,5 +1,7 @@
 # A default-package class resolves a compiled default-package class to a default import
 
+Reported as [GROOVY-12555](https://issues.apache.org/jira/browse/GROOVY-12555). The fix is proposed in [apache/groovy#3084](https://github.com/apache/groovy/pull/3084), with a backport to `GROOVY_5_1_X` in commit [d84100ebe6](https://github.com/jdaugherty/groovy/commit/d84100ebe6ac81c73763af11ee9d5ec2dc5c3c15).
+
 A class in the default package that refers to another class of the default package by its simple name finds that
 class while both are compiled together. When the other class is already compiled, Groovy resolves the name to a class
 of its default imports with the same simple name instead, here `groovy.util.Factory`. The same source compiles to a
